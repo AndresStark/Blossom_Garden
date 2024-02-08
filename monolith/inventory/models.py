@@ -4,7 +4,7 @@ class Material(models.Model):
     name = models.CharField(max_length=200, default="Material")
     material_type = models.CharField(max_length=200, default="")
     description = models.CharField(max_length=1000, default="Description")
-    measure_type = models.CharField(max_lenght=30, default="units")
+    measure_type = models.CharField(max_length=30, default="units")
     amount_per_measure = models.FloatField(default=0)
     price_per_measure = models.FloatField(default=0)
 
@@ -18,6 +18,9 @@ class Flower(models.Model):
     materials_price = []
     flower_type = models.CharField(max_length=300, default="Rose")
     price_per_unit = models.FloatField(default=0)
+    
+    def __str__(self):
+        return str(self.name)
 
     def addMaterial(material: Material, quantity_per_unit: float):
         Flower.materials_quantity.append(
