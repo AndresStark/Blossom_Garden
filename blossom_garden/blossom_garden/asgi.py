@@ -1,5 +1,5 @@
 """
-ASGI config for florilegio project.
+ASGI config for blossom_garden project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'florilegio.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blossom_garden.settings')
 
 application = get_asgi_application()
