@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Material, Flower
+from .models import Material, Flower, Foliage, Arrangement
 
 class MaterialAdmin(admin.ModelAdmin):
     fields = [
@@ -15,9 +15,25 @@ class FlowerAdmin(admin.ModelAdmin):
     fields = [
         "name",
         "quantity",
-        "flower_type",
-        "price_per_unit"
+        "price",
+        ]
+    
+class FoliageAdmin(admin.ModelAdmin):
+    fields = [
+        "name",
+        "quantity",
+        "price",
+        ]
+    
+class ArrangementAdmin(admin.ModelAdmin):
+    fields = [
+        "name",
+        "quantity",
+        "category",
+        "price",
         ]
     
 admin.site.register(Material, MaterialAdmin)
 admin.site.register(Flower, FlowerAdmin)
+admin.site.register(Foliage, FoliageAdmin)
+admin.site.register(Arrangement, ArrangementAdmin)

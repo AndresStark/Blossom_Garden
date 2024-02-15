@@ -10,9 +10,13 @@ from rest_framework import viewsets
 from django.views import generic
 
 
-class InventoryView(viewsets.ModelViewSet):
+class FlowerView(viewsets.ModelViewSet):
     serializer_class = FlowerSerializer
     queryset = Flower.objects.all()
+
+class MaterialView(viewsets.ModelViewSet):
+    serializer_class = MaterialSerializer
+    queryset = Material.objects.all()
 
 
 class IndexView(generic.ListView):

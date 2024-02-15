@@ -7,3 +7,5 @@ Backend dependencies:
     python=3.9
     django
     djangorestframework
+    django-cors-headers
+    <!-- coreapi -->
