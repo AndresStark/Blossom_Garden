@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'coreapi',
     'inventory.apps.InventoryConfig',
-    # 'accounts.apps.InventoryConfig',
+    'accounts.apps.InventoryConfig',
 ]
 
 MIDDLEWARE = [

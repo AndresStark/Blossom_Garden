@@ -8,7 +8,9 @@ class MaterialAdmin(admin.ModelAdmin):
         "description",
         "measure_type",
         "amount_per_measure",
-        "price_per_measure"
+        "price_per_measure",
+        "color",
+        "tags",
         ]
     
 class FlowerAdmin(admin.ModelAdmin):
@@ -16,6 +18,8 @@ class FlowerAdmin(admin.ModelAdmin):
         "name",
         "quantity",
         "price",
+        "color",
+        "tags",
         ]
     
 class FoliageAdmin(admin.ModelAdmin):
@@ -23,6 +27,8 @@ class FoliageAdmin(admin.ModelAdmin):
         "name",
         "quantity",
         "price",
+        "color",
+        "tags",
         ]
     
 class ArrangementAdmin(admin.ModelAdmin):
