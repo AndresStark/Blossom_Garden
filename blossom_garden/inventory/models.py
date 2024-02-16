@@ -1,4 +1,5 @@
 from django.db import models
+
 RED = "RD"
 BLACK = "BK"
 BLUE = "BL"
@@ -11,6 +12,7 @@ PURPLE = "PR"
 WHITE = "WH"
 YELLOW = "YL"
 PINK = "PK"
+
 COLOR = [
         (RED, "Rojo"),
         (BLACK, "Negro"),
@@ -45,7 +47,7 @@ class Material(models.Model):
 
     def __str__(self):
         return str(self.name)
-
+    
 
 class Flower(models.Model):
     name = models.CharField(max_length=200, default="Material")
@@ -54,22 +56,15 @@ class Flower(models.Model):
     # image = models.ImageField()
     color = models.CharField(max_length=100, choices=COLOR, blank=True)
     tags = models.CharField(max_length=100, blank=True)
-    materials_quantity = []
-    materials_price = []
+    cost = models.FloatField(default=0)
     
     def __str__(self):
         return str(self.name)
-
-    def addMaterial(material: Material, quantity: float):
-        Flower.materials_quantity.append(
-            {str(material.name): quantity}
-        )
-        Flower.materials_price.append(
-            {str(material.name): (quantity * material.price_per_measure)}
-        )
-        print("Material {{material.name}} successfully added!")
-        # No sé si este método funciona. Debería revisarse para mayor seguridad
-
+    
+    class FlowerMaterial(models.Model):
+        materials = models.OneToOneField(Material, on_delete=models.CASCADE)
+        quantity = models.IntegerField(default=0)
+        subtotal_cost = models.FloatField(default=0)
 
 class Foliage(models.Model):
     name = models.CharField(max_length=200, default="Material")
@@ -78,11 +73,15 @@ class Foliage(models.Model):
     # image = models.ImageField()
     color = models.CharField(max_length=100, choices=COLOR, blank=True)
     tags = models.CharField(max_length=100, blank=True)
-    materials_quantity = []
-    materials_price = []
+    cost = models.FloatField(default=0)
     
     def __str__(self):
         return str(self.name)
+    
+    class FoliageMaterial(models.Model):
+        materials = models.OneToOneField(Material, on_delete=models.CASCADE)
+        quantity = models.IntegerField(default=0)
+        subtotal_cost = models.FloatField(default=0)
 
 
 class Arrangement(models.Model):

@@ -20,6 +20,14 @@ class FlowerAdmin(admin.ModelAdmin):
         "price",
         "color",
         "tags",
+        "cost",
+        ]
+    
+    class FlowerMaterialAdmin(admin.ModelAdmin):
+        fields = [
+            "materials",
+            "quantity",
+            "subtotal_cost",
         ]
     
 class FoliageAdmin(admin.ModelAdmin):
@@ -29,6 +37,13 @@ class FoliageAdmin(admin.ModelAdmin):
         "price",
         "color",
         "tags",
+        ]
+    
+    class FoliageMaterialAdmin(admin.ModelAdmin):
+        fields = [
+            "materials",
+            "quantity",
+            "subtotal_cost",
         ]
     
 class ArrangementAdmin(admin.ModelAdmin):
