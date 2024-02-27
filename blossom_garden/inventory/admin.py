@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Material, Flower, Foliage, Arrangement
+
+from inventory.models import Material, Flower, Foliage, Arrangement
 
 class MaterialAdmin(admin.ModelAdmin):
     fields = [

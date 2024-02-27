@@ -8,6 +8,9 @@ class FlowerSerializer(serializers.ModelSerializer):
         fields = '__all__'
         # fields = ('id', 'name', 'description')
 
+        class FlowerMaterialSerializer(serializers.ModelSerializer):
+            pass
+
 class MaterialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Material
