@@ -4,11 +4,18 @@ import reportWebVitals from './reportWebVitals';
 import LayoutMenu from './pages/layout/layoutMenu';
 import './style/index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './pages/home';
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element: <LayoutMenu/>
+    element: <LayoutMenu/>,
+    children:([
+      {
+        path:'/',
+        element: <Home/>
+      }
+    ])
   }
 ])
 
