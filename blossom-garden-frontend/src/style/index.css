@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Fuggles&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 body{
     margin: 0;
     padding: 0;
     margin: 0;
+}
+
+*{
+    /* font-family: "Raleway", sans-serif; */
+    font-family: "Cardo", serif;
+}
+
+p{
+    line-height: 2rem;
 }

@@ -38,8 +38,8 @@ export default function NavBar() {
 
 
     return (
-        <section className="flex justify-around bg-green bg-opacity-50 px-10">
-            <ul className="list-none w-full flex items-center text-nowrap">
+        <section className="flex justify-around bg-white bg-opacity-50 px-10">
+            <ul className="list-none w-full flex items-center text-nowrap gap-10">
                 <li className="hover:bg-pink">Inicio</li>
                 <div onClick={() => setSubMenu(!subMenu)} className="relative hover:bg-pink">
                     <li>Tienda</li>
@@ -55,7 +55,7 @@ export default function NavBar() {
                 <li className="hover:bg-pink">Metodos de pago y envios</li>
                 <li className="hover:bg-pink">Sobre nosotros</li>
             </ul>
-            <button className="bg-pink px-4 py-2 my-2  rounded whitespace-nowrap">Iniciar sesión</button>
+            <button className="bg-pink text-white px-4 py-2 my-2  rounded whitespace-nowrap">Iniciar sesión</button>
         </section>
     )
 }
