@@ -36,26 +36,25 @@ export default function NavBar() {
         }
     ]
 
-
     return (
-        <section className="flex justify-around bg-white bg-opacity-50 px-10">
+        <section className="flex bg-white bg-opacity-50 px-10">
             <ul className="list-none w-full flex items-center text-nowrap gap-10">
-                <li className="hover:bg-pink">Inicio</li>
-                <div onClick={() => setSubMenu(!subMenu)} className="relative hover:bg-pink">
-                    <li>Tienda</li>
+                <li className="hover:bg-pink h-full px-6 flex items-center">Inicio</li>
+                <div onClick={() => setSubMenu(!subMenu)} className="relative hover:bg-pink h-full">
+                    <li className={`hover:bg-pink ${subMenu && 'bg-pink'} h-full px-6 flex items-center`}>Tienda</li>
                     {subMenu &&
                         <div className="absolute z-10 bg-white ">
                             {categories.map((category) =>
-                                <h1 value={category.value} id={category.id} className="hover:bg-pink px-4 py-2">{category.label}</h1>
+                                <h1 value={category.value} id={category.id} className="hover:bg-pink px-6 flex items-center py-2">{category.label}</h1>
                             )}
                         </div>
                     }
                 </div>
-                <li className="hover:bg-pink">Contactanos</li>
-                <li className="hover:bg-pink">Metodos de pago y envios</li>
-                <li className="hover:bg-pink">Sobre nosotros</li>
+                <li className="hover:bg-pink h-full px-6 flex items-center">Contactanos</li>
+                <li className="hover:bg-pink h-full px-6 flex items-center">Metodos de pago y envios</li>
+                <li className="hover:bg-pink h-full px-6 flex items-center">Sobre nosotros</li>
             </ul>
-            <button className="bg-pink text-white px-4 py-2 my-2  rounded whitespace-nowrap">Iniciar sesión</button>
+            <button className="bg-pink text-white px-6 flex items-center py-2 my-2  rounded whitespace-nowrap">Iniciar sesión</button>
         </section>
     )
 }
