@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from inventory.models import Material, Flower, Foliage, Arrangement
+from inventory.models import Material, Flower, FlowerMaterial, Foliage, FoliageMaterial, Arrangement
 
 class MaterialAdmin(admin.ModelAdmin):
     fields = [
@@ -15,6 +15,14 @@ class MaterialAdmin(admin.ModelAdmin):
         ]
     
 class FlowerAdmin(admin.ModelAdmin):
+
+    class FlowerMaterialAdmin(admin.ModelAdmin):
+        fields = [
+            "materials",
+            "material_quantity",
+            "subtotal_cost",
+        ]
+
     fields = [
         "name",
         "quantity",
@@ -24,12 +32,11 @@ class FlowerAdmin(admin.ModelAdmin):
         "cost",
         ]
     
-    class FlowerMaterialAdmin(admin.ModelAdmin):
-        fields = [
-            "materials",
-            "quantity",
-            "subtotal_cost",
-        ]
+    model = [
+        "FlowerMaterialAdmin"
+    ]
+    
+    
     
 class FoliageAdmin(admin.ModelAdmin):
     fields = [
@@ -43,7 +50,7 @@ class FoliageAdmin(admin.ModelAdmin):
     class FoliageMaterialAdmin(admin.ModelAdmin):
         fields = [
             "materials",
-            "quantity",
+            "material_quantity",
             "subtotal_cost",
         ]
     
@@ -57,5 +64,7 @@ class ArrangementAdmin(admin.ModelAdmin):
     
 admin.site.register(Material, MaterialAdmin)
 admin.site.register(Flower, FlowerAdmin)
+# admin.site.register(FlowerMaterial, FlowerMaterialAdmin)
 admin.site.register(Foliage, FoliageAdmin)
+# admin.site.register(FoliageMaterial, FoliageMaterialAdmin)
 admin.site.register(Arrangement, ArrangementAdmin)

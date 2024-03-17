@@ -1,10 +1,11 @@
 from django.db import models
 
-from inventory.model import data, material
+from inventory.model import data
+from inventory.model.material import Material
 
 class Foliage(models.Model):
     
-    name = models.CharField(max_length=200, default="Material")
+    name = models.CharField(max_length=200, default="Foliage")
     quantity = models.IntegerField(default=0)
     price = models.FloatField(default=0)
     # image = models.ImageField()
@@ -15,7 +16,7 @@ class Foliage(models.Model):
     def __str__(self):
         return str(self.name)
     
-# class FoliageMaterial(Foliage):
-#     materials = models.OneToOneField(material, on_delete=models.CASCADE)
-#     quantity = models.IntegerField(default=0)
-#     subtotal_cost = models.FloatField(default=0)
+class FoliageMaterial(Foliage):
+    materials = models.OneToOneField(Material, on_delete=models.CASCADE)
+    material_quantity = models.IntegerField(default=0)
+    subtotal_cost = models.FloatField(default=0)
